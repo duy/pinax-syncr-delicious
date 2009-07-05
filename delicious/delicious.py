@@ -110,9 +110,9 @@ class DeliciousSyncr:
         except KeyError:
             extended = ''
         default_dict = {
-            'description': post_elem.attrib['description']
+            'description': post_elem.attrib['description'],
             'tags': tags,
-            'url': post_elem.attrib['href']
+            'url': post_elem.attrib['href'],
             # Is post_hash attrib unique to the post/URL or post/username ?!
             'post_hash': post_hash,
             'saved_date': time_obj,

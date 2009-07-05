@@ -1,7 +1,7 @@
-from django.contrib import admin
-from syncr.delicious.models import Bookmark
-
-class DeliciousAccountAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(DeliciousAccount, DeliciousAccountAdmin)
+#from django.contrib import admin
+#from delicious.models import DeliciousAccount
+#
+#class DeliciousAccountAdmin(admin.ModelAdmin):
+#    pass
+#
+#admin.site.register(DeliciousAccount, DeliciousAccountAdmin)
