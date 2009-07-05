@@ -1,0 +1,26 @@
+{% tags_for_object obj as tags %}
+{% if tags %}
+    <img src="/site_media/tags.png" border="0" class="noborder" align="absmiddle" />
+    {% for tag in tags %}
+        <a href="/tags/{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+{% endif %}
+
+
+{% extends "bookmarks/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% blocktrans %}Import Delicious Bookmark{% endblocktrans %}{% endblock %}
+
+
+{% block body %}
+    <h1>{% trans "Add Delicious Account" %}</h1>
+    
+    <form method="POST" action="">
+        <table>
+            {{ bookmark_form }}
+            <tr><td></td><td><input type="submit" value="{% trans 'add delicious account' %}"></td></tr>
+        </table>
+    </form>
+{% endblock %}

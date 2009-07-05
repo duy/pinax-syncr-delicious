@@ -1,0 +1,17 @@
+{% extends "bookmarks/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% blocktrans %}Import Delicious Bookmark{% endblocktrans %}{% endblock %}
+
+
+{% block body %}
+    <h1>{% trans "Add Delicious Account" %}</h1>
+    
+    <form method="POST" action="">
+        <table>
+            {{ delicious_account_form }}
+            <tr><td></td><td><input type="submit" value="{% trans 'add delicious account' %}"></td></tr>
+        </table>
+    </form>
+{% endblock %}

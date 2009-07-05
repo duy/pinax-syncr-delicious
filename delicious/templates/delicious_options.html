@@ -1,0 +1,28 @@
+{% extends "bookmarks/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% blocktrans %}Delicious Syncronization{% endblocktrans %}{% endblock %}
+
+
+{% block body %}
+    <h1>{% trans "Delicious Syncronization" %}</h1>
+    <ul>
+        {% if not has_delicious_account %}
+        <li><a href="{% url add_delicious_account %}">{% trans "Add user and password" %}</a></li>
+        {% else %}
+        <li><a href="{% url add_delicious_account %}">{% trans "Change Delicious username and password" %}</a></li>
+        <li><a href="{% url import_all %}">{% trans "Download All" %}</a></li>
+        <li><a href="{% url add_delicious_account %}">{% trans "Download Recent" %}</a></li>
+        <li><a href="{% url add_delicious_account %}">{% trans "Download Todays Bookmarks" %}</a></li>
+        <li><a href="{% url add_delicious_account %}">{% trans "Upload to Delicious" %}</a></li>
+        <li><a href="{% url add_delicious_account %}">{% trans "Syncronize " %}</a></li>
+        {% endif %}
+        {# bookmarks por tag, usuario... #}
+    </ul>
+    <form method="POST" action="">
+            {{ tag_form }}
+            <tr><td></td><td><input type="submit" value="{% trans 'Syncronize' %}"></td></tr>
+        </table>
+    </form>
+{% endblock %}
